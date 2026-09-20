@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+
+  --color-ink-950: #050c18;
+  --color-ink-900: #0a1526;
+  --color-ink-800: #101f3a;
+  --color-ink-700: #1a2f52;
+  --color-ink-600: #274067;
+
+  --color-gold-200: #f3dfae;
+  --color-gold-300: #e9c886;
+  --color-gold-400: #ddaf5c;
+  --color-gold-500: #c9973f;
+  --color-gold-600: #a1762b;
+
+  --color-cream-50: #faf7f0;
+  --color-cream-100: #f3ecdd;
+  --color-cream-200: #e7dabf;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 font-sans text-cream-50 antialiased;
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-ink-950);
+}
+
+/* Scroll-reveal animation (driven by the Reveal component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
