@@ -113,7 +113,8 @@ export default function Work() {
           {CASE_STUDIES.map((study, i) => (
             <div
               key={study.business}
-              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14"
+              id={`work-${study.business.toLowerCase().replace(/\s+/g, "-")}`}
+              className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2 lg:gap-14"
             >
               <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="animate-float-slow">
