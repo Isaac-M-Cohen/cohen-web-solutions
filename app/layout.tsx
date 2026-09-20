@@ -15,9 +15,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Cohen Web Solutions — Websites for Miami's Jewish Businesses",
+  title: "Cohen Web Solutions — Websites that turn visitors into customers",
   description:
-    "Miami-based full-stack developer building fast, modern websites for kosher restaurants, real estate agents, med spas, and Jewish community organizations. Get a free site audit.",
+    "Miami-based developer building fast, modern websites for restaurants, real estate agents, med spas, and local businesses. Get a free site audit.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

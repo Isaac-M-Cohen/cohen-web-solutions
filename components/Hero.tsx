@@ -1,21 +1,31 @@
+"use client";
+
 import BrowserMock from "./BrowserMock";
 import Reveal from "./Reveal";
+import Magnetic from "./Magnetic";
+import RotatingWord from "./RotatingWord";
 
 const TRUST_POINTS = ["Based in Miami", "You own everything I build", "Live in weeks, not months"];
+
+const HEADLINE_WORDS = ["Websites", "that", "turn", "visitors", "into"];
+
+function Word({ children, delay }: { children: string; delay: number }) {
+  return (
+    <span className="inline-block overflow-hidden align-bottom">
+      <span
+        className="inline-block animate-rise-in will-change-transform"
+        style={{ animationDelay: `${delay}s` }}
+      >
+        {children}
+      </span>
+      <span aria-hidden>{"\u00A0"}</span>
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-ink-950 pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* Ambient gold glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gold-500/10 blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/3 -right-40 h-[400px] w-[400px] rounded-full bg-ink-600/30 blur-[100px]"
-      />
-
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10">
         <div>
           <Reveal>
@@ -25,33 +35,46 @@ export default function Hero() {
             </span>
           </Reveal>
 
-          <Reveal delay={100}>
-            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
-              Websites for Miami&rsquo;s <em className="text-gold-300 not-italic underline decoration-gold-500/50 decoration-2 underline-offset-8">Jewish businesses</em>.
-            </h1>
-          </Reveal>
+          <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
+            {HEADLINE_WORDS.map((word, i) => (
+              <Word key={word} delay={0.1 + i * 0.09}>
+                {word}
+              </Word>
+            ))}
+            <span
+              className="inline-block animate-rise-in overflow-hidden align-bottom"
+              style={{ animationDelay: "0.6s" }}
+            >
+              <RotatingWord words={["customers.", "calls.", "bookings.", "regulars."]} />
+            </span>
+          </h1>
 
           <Reveal delay={200}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream-50/70">
-              I design and build fast, modern websites for kosher restaurants, real estate agents, med spas,
-              and community organizations — sites that turn visitors into calls, bookings, and sales.
+              I design and build fast, modern websites for Miami restaurants, real estate agents, med
+              spas, and local businesses — sites engineered to turn searches into calls, bookings, and
+              sales.
             </p>
           </Reveal>
 
           <Reveal delay={300}>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#contact"
-                className="rounded-full bg-gold-400 px-8 py-4 text-center text-base font-bold text-ink-950 transition-all hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-[0_16px_40px_-12px_rgba(221,175,92,0.5)]"
-              >
-                Get a free site audit
-              </a>
-              <a
-                href="#work"
-                className="rounded-full border border-white/20 px-8 py-4 text-center text-base font-semibold text-cream-50 transition-colors hover:border-gold-400/60 hover:text-gold-300"
-              >
-                See concept work
-              </a>
+              <Magnetic>
+                <a
+                  href="#contact"
+                  className="inline-block rounded-full bg-gold-400 px-8 py-4 text-center text-base font-bold text-ink-950 transition-colors hover:bg-gold-300"
+                >
+                  Get a free site audit
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="#work"
+                  className="inline-block rounded-full border border-white/20 px-8 py-4 text-center text-base font-semibold text-cream-50 transition-colors hover:border-gold-400/60 hover:text-gold-300"
+                >
+                  See concept work
+                </a>
+              </Magnetic>
             </div>
           </Reveal>
 
@@ -73,10 +96,10 @@ export default function Hero() {
           <div className="animate-float">
             <BrowserMock
               url="yourbusiness.miami"
-              kicker="Glatt kosher · Miami Beach"
-              headline="A taste of the Holy Land, in the heart of Miami Beach."
-              sub="Fresh falafel, shawarma, and Shabbat takeout — order ahead and skip the line."
-              cta="Order takeout"
+              kicker="Miami Beach · Open late"
+              headline="Miami Beach's favorite late-night spot — with a website to match."
+              sub="Real photos, full menu, and order-ahead built for the dinner rush."
+              cta="See the menu"
             />
           </div>
           {/* Floating chips */}

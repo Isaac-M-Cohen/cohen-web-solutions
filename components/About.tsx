@@ -15,7 +15,7 @@ const PRINCIPLES = [
   },
   {
     title: "Local",
-    text: "I'm in Miami and part of the community I build for. I know why Friday takeout ordering matters and why your site has to be perfect on a phone.",
+    text: "I'm in Miami, building for Miami. I know why the Friday dinner rush matters and why your site has to be perfect on a phone.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function About() {
               timelines, no junior-varsity output.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink-950/70">
-              I grew up in Miami&rsquo;s Jewish community, so I don&rsquo;t just build for your customers —
+              I grew up in Miami, so I don&rsquo;t just build for your customers —
               I understand them. I know why the phone has to ring, why everything has to work perfectly on
               mobile, and why trust is everything.
             </p>

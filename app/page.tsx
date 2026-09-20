@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Marquee from "../components/Marquee";
 import Services from "../components/Services";
 import Work from "../components/Work";
 import About from "../components/About";
@@ -12,6 +13,15 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee
+          items={[
+            "Free 15-minute site audit",
+            "Fixed pricing, no surprises",
+            "Live in weeks, not months",
+            "You own everything",
+            "Built in Miami",
+          ]}
+        />
         <Services />
         <Work />
         <About />

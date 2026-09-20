@@ -12,7 +12,7 @@ const SERVICES = [
     title: "Landing Pages",
     outcome: "One page. One job: more leads.",
     description:
-      "A focused page for a promotion, a new location, or a seasonal push — Passover catering, High Holiday seats, summer specials — engineered to capture inquiries.",
+      "A focused page for a promotion, a new location, or a seasonal push — holiday catering, grand openings, summer specials — engineered to capture inquiries.",
     tags: ["Fast turnaround", "Lead capture", "A/B-ready"],
   },
   {

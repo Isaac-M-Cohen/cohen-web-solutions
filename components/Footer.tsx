@@ -9,7 +9,7 @@ export default function Footer() {
             Cohen <span className="font-normal text-cream-50/70">Web Solutions</span>
             <span className="text-gold-400">.</span>
           </p>
-          <p className="mt-1 text-sm text-cream-50/45">Websites for Miami&rsquo;s Jewish businesses.</p>
+          <p className="mt-1 text-sm text-cream-50/45">Websites for Miami businesses.</p>
         </div>
         <div className="flex items-center gap-6">
           {NAV_LINKS.map((link) => (

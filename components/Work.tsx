@@ -14,38 +14,38 @@ type CaseStudy = {
 const CASE_STUDIES: CaseStudy[] = [
   {
     business: "Pita Loca",
-    category: "Kosher Israeli restaurant",
+    category: "Israeli restaurant",
     location: "Miami Beach · serving since 1997",
     mock: {
       url: "pitaloca.miami",
-      kicker: "Glatt kosher · Miami Beach",
+      kicker: "Miami Beach · Since 1997",
       headline: "Serving Miami Beach since 1997 — with a website to match.",
-      sub: "Real photos, a real menu, and Shabbat takeout ordering built for the Friday rush.",
-      cta: "Order Shabbat takeout",
+      sub: "Real photos, a real menu, and takeout ordering built for the Friday rush.",
+      cta: "Order takeout",
     },
     beforeSummary:
       "A bare-bones template page: a wall of text, no photos, no menu, no online ordering, and no clear hours or location. A 25-year institution that looks like a pop-up online.",
     problems: [
       "No photos of the food or restaurant — customers can't see what they're getting",
       "No menu on the site; nothing to browse before visiting",
-      "No online ordering or Shabbat takeout flow, despite Friday takeout being a core offering",
+      "No online ordering or takeout flow, despite Friday takeout being a core offering",
       "A generic domain name that doesn't match the business — hard to find, hard to remember",
     ],
     concepts: [
       "Warm, modern one-pager with real photography and the full menu",
-      "Shabbat takeout pre-ordering with Friday cutoff times built in",
+      "Takeout pre-ordering with Friday cutoff times built in",
       "Click-to-call, hours, and map front and center for tourists and locals",
       "Engineered to load in under two seconds on a phone",
     ],
   },
   {
     business: "Mozart Cafe",
-    category: "Kosher restaurant",
+    category: "Restaurant",
     location: "Sunny Isles Beach",
     mock: {
       url: "mozartcafe.miami",
-      kicker: "Kosher · Sunny Isles Beach",
-      headline: "Sunny Isles' kosher kitchen, finally with a front door.",
+      kicker: "Sunny Isles Beach",
+      headline: "Sunny Isles' beloved kitchen, finally with a front door.",
       sub: "A real brand site — story, menu, catering — with ordering woven in, not bolted on.",
       cta: "Explore the menu",
     },
@@ -66,13 +66,13 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     business: "Bagel Time Cafe",
-    category: "Kosher bagel cafe",
+    category: "Bagel cafe",
     location: "Miami Beach · a local morning institution",
     mock: {
       url: "bageltime.miami",
-      kicker: "Kosher · Miami Beach",
+      kicker: "Miami Beach",
       headline: "Miami Beach's morning institution, rebuilt for the rush.",
-      sub: "Order-ahead for the breakfast line, catering platters for offices and simchas.",
+      sub: "Order-ahead for the breakfast line, catering platters for offices and events.",
       cta: "Order ahead",
     },
     beforeSummary:
@@ -80,12 +80,12 @@ const CASE_STUDIES: CaseStudy[] = [
     problems: [
       "Web presence split across delivery apps and directories — no single home base",
       "No order-ahead experience for the morning rush, when speed matters most",
-      "Catering platters for offices, shiva meals, and events are buried or missing",
+      "Catering platters for offices and events are buried or missing",
       "The brand regulars love doesn't come through online",
     ],
     concepts: [
       "Flagship site with order-ahead designed for the breakfast rush",
-      "Dedicated catering page: platters, shiva meals, and event orders",
+      "Dedicated catering page: platters, office lunches, and event orders",
       "Loyalty and reviews front and center to turn regulars into evangelists",
       "Fast, phone-first design — most orders happen on mobile",
     ],

@@ -136,7 +136,7 @@ export default function Contact() {
                 <input
                   id="business"
                   name="business"
-                  placeholder="Cohen's Kosher Market"
+                  placeholder="Cohen's Market"
                   className={inputClass}
                 />
               </div>
