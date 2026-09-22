@@ -1,5 +1,6 @@
 import BrowserMock from "./BrowserMock";
 import Reveal from "./Reveal";
+import Parallax from "./Parallax";
 
 type CaseStudy = {
   business: string;
@@ -94,17 +95,17 @@ const CASE_STUDIES: CaseStudy[] = [
 
 export default function Work() {
   return (
-    <section id="work" className="bg-ink-950 py-24 sm:py-32">
+    <section id="work" className="bg-cream-50 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-400">Selected work</p>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Selected work</p>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-ink-950 sm:text-5xl">
             Concept redesigns for real Miami businesses.
           </h2>
-          <div className="mt-6 max-w-3xl rounded-2xl border border-gold-400/25 bg-gold-400/5 p-5 text-[15px] leading-relaxed text-cream-50/70">
-            <span className="font-semibold text-gold-300">A note on honesty: </span>
+          <div className="mt-6 max-w-3xl rounded-2xl border border-ink-950/10 bg-white p-5 text-[15px] leading-relaxed text-ink-950/70 shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)]">
+            <span className="font-semibold text-gold-600">A note on honesty: </span>
             these are unsolicited concept redesigns of real local businesses —{" "}
-            <span className="font-semibold text-cream-50">not client work</span>. I build them to show
+            <span className="font-semibold text-ink-950">not client work</span>. I build them to show
             exactly how I&rsquo;d approach your project, before you spend a dollar.
           </div>
         </Reveal>
@@ -117,51 +118,59 @@ export default function Work() {
               className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2 lg:gap-14"
             >
               <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="animate-float-slow">
-                  <BrowserMock
-                    url={study.mock.url}
-                    kicker={study.mock.kicker}
-                    headline={study.mock.headline}
-                    sub={study.mock.sub}
-                    cta={study.mock.cta}
-                  />
-                </div>
+                <Parallax speed={0.05}>
+                  <div className="animate-float-slow">
+                    <BrowserMock
+                      url={study.mock.url}
+                      kicker={study.mock.kicker}
+                      headline={study.mock.headline}
+                      sub={study.mock.sub}
+                      cta={study.mock.cta}
+                    />
+                  </div>
+                </Parallax>
               </Reveal>
 
               <Reveal delay={150} className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <span className="inline-block rounded-full border border-gold-400/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-300">
-                  Concept redesign
-                </span>
-                <h3 className="mt-5 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+                <div className="flex items-center gap-4">
+                  <span className="font-display text-sm font-semibold text-gold-600">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-px w-10 bg-gold-500/60" />
+                  <span className="inline-block rounded-full border border-gold-600/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
+                    Concept redesign
+                  </span>
+                </div>
+                <h3 className="mt-5 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
                   {study.business}
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-[0.14em] text-cream-50/50">
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.14em] text-ink-950/50">
                   {study.category} · {study.location}
                 </p>
-                <p className="mt-5 leading-relaxed text-cream-50/70">{study.beforeSummary}</p>
+                <p className="mt-5 leading-relaxed text-ink-950/70">{study.beforeSummary}</p>
 
                 <div className="mt-7 grid gap-7 sm:grid-cols-2">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-cream-50/40">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-ink-950/40">
                       What&rsquo;s wrong now
                     </p>
-                    <ul className="mt-3 flex flex-col gap-2.5 text-[14px] leading-relaxed text-cream-50/65">
+                    <ul className="mt-3 flex flex-col gap-2.5 text-[14px] leading-relaxed text-ink-950/65">
                       {study.problems.map((problem) => (
                         <li key={problem} className="flex gap-2.5">
-                          <span className="mt-0.5 font-bold text-red-400/80">✕</span>
+                          <span className="mt-0.5 font-bold text-red-500/80">✕</span>
                           <span>{problem}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-300/80">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">
                       The concept
                     </p>
-                    <ul className="mt-3 flex flex-col gap-2.5 text-[14px] leading-relaxed text-cream-50/80">
+                    <ul className="mt-3 flex flex-col gap-2.5 text-[14px] leading-relaxed text-ink-950/80">
                       {study.concepts.map((concept) => (
                         <li key={concept} className="flex gap-2.5">
-                          <span className="mt-0.5 font-bold text-gold-400">✓</span>
+                          <span className="mt-0.5 font-bold text-gold-600">✓</span>
                           <span>{concept}</span>
                         </li>
                       ))}
@@ -174,7 +183,7 @@ export default function Work() {
         </div>
 
         <Reveal>
-          <div className="mt-20 rounded-2xl border border-white/10 bg-ink-900/60 p-8 text-center sm:p-10">
+          <div className="mt-20 rounded-2xl bg-ink-950 p-8 text-center text-cream-50 sm:p-10">
             <h3 className="font-display text-2xl font-semibold sm:text-3xl">
               Your business could be next.
             </h3>

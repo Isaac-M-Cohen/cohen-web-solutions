@@ -17,7 +17,7 @@ export default function RotatingWord({
   }, [words.length, interval]);
 
   return (
-    <span className="relative inline-grid overflow-hidden pb-1 align-bottom text-gold-300">
+    <span className="relative inline-grid overflow-hidden pb-1 align-bottom text-gold-600">
       {words.map((word, i) => (
         <span
           key={word}

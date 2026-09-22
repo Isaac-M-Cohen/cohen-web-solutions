@@ -25,8 +25,10 @@ check their sites before reaching out.
 
 ### 3. Bagel Time Cafe — Kosher bagel cafe
 - **Address:** 3915 Alton Rd, Miami Beach, FL 33140 · (305) 538-0300
+- **Owner:** Josh (Yehoshua) Nodel (per 2023–24 news coverage)
 - **Site:** bageltimecafemiami.com (basic) — web presence scattered across Uber Eats, NetWaiter, and directory listings
 - **Profile:** Beloved kosher breakfast/brunch institution; strong reviews (4.6, 2000+ ratings on delivery apps). Active Instagram: @bageltimecafe.
+- **⚠️ Status flag (2026-09-20):** Their site now says "We have Moved! To 525 W 41st St, Miami Beach, FL 33140 — Now Known as Miri's Café" (miriscafe.com), same phone. Verify via IG DM before outreach — concept is built around the old branding.
 - **What's wrong:** No owned flagship experience — ordering is fragmented across third-party apps, no order-ahead for the morning rush, catering/shiva platters buried or missing.
 - **Outreach angle:** "Your morning rush deserves order-ahead, and your catering platters deserve their own page. I mocked up a concept — 15 minutes to walk you through it?"
 

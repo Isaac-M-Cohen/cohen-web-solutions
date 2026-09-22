@@ -21,21 +21,21 @@ const PRINCIPLES = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-cream-50 py-24 text-ink-950 sm:py-32">
+    <section id="about" className="bg-white py-24 text-ink-950 sm:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
         <Reveal>
           <div className="relative mx-auto max-w-sm">
-            <div className="overflow-hidden rounded-3xl bg-ink-950 p-10 text-center shadow-[0_30px_60px_-20px_rgba(5,12,24,0.45)]">
-              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border-2 border-gold-400/60 bg-ink-800">
-                <span className="font-display text-5xl font-semibold text-gold-300">I.</span>
+            <div className="overflow-hidden rounded-3xl border border-ink-950/10 bg-cream-50 p-10 text-center shadow-[0_30px_60px_-30px_rgba(5,12,24,0.35)]">
+              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border-2 border-gold-500/50 bg-white">
+                <span className="font-display text-5xl font-semibold text-gold-600">I.</span>
               </div>
-              <p className="mt-6 font-display text-2xl font-semibold text-cream-50">Isaac</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-cream-50/50">
+              <p className="mt-6 font-display text-2xl font-semibold text-ink-950">Isaac</p>
+              <p className="mt-2 text-sm uppercase tracking-[0.2em] text-ink-950/50">
                 Full-stack developer
               </p>
-              <p className="mt-1 text-sm uppercase tracking-[0.2em] text-gold-300/80">Miami, Florida</p>
-              <div className="mx-auto mt-6 h-px w-16 bg-gold-400/40" />
-              <p className="mt-6 text-sm italic leading-relaxed text-cream-50/60">
+              <p className="mt-1 text-sm uppercase tracking-[0.2em] text-gold-600">Miami, Florida</p>
+              <div className="mx-auto mt-6 h-px w-16 bg-gold-500/50" />
+              <p className="mt-6 text-sm italic leading-relaxed text-ink-950/60">
                 &ldquo;Young, hungry, and shipping.&rdquo;
               </p>
             </div>

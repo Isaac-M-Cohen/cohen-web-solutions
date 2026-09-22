@@ -40,7 +40,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-cream-50 py-24 text-ink-950 sm:py-32">
+    <section id="services" className="bg-white py-24 text-ink-950 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Services</p>
@@ -56,7 +56,7 @@ export default function Services() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, i) => (
             <Reveal key={service.title} delay={(i % 3) * 100}>
-              <div className="group flex h-full flex-col rounded-2xl border border-ink-950/10 bg-white p-8 shadow-[0_2px_20px_-8px_rgba(5,12,24,0.12)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_-16px_rgba(5,12,24,0.25)]">
+              <div className="group flex h-full flex-col rounded-2xl border border-ink-950/10 bg-cream-50 p-8 transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(5,12,24,0.25)]">
                 <span className="font-display text-sm font-semibold text-gold-600">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -67,7 +67,7 @@ export default function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-cream-100 px-3 py-1 text-xs font-medium text-ink-800"
+                      className="rounded-full bg-white px-3 py-1 text-xs font-medium text-ink-800"
                     >
                       {tag}
                     </span>
