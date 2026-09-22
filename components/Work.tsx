@@ -181,8 +181,9 @@ export default function Work() {
 
         {/* Comparison table */}
         <Reveal delay={100}>
-          <div className="mt-14 overflow-x-auto rounded-2xl border border-ink-950/10 bg-white shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)]">
-            <table className="w-full min-w-[560px] border-collapse text-left text-[14px]">
+          <div className="relative mt-14">
+            <div className="overflow-x-auto rounded-2xl border border-ink-950/10 bg-white shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)]">
+              <table className="w-full min-w-[560px] border-collapse text-left text-[14px]">
               <thead>
                 <tr className="border-b border-ink-950/10">
                   <th className="p-4 align-top font-medium text-ink-950/40 sm:p-5">
@@ -214,6 +215,12 @@ export default function Work() {
                 ))}
               </tbody>
             </table>
+            </div>
+            {/* Scroll hint: table scrolls horizontally on phones */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 right-0 w-8 rounded-r-2xl bg-gradient-to-l from-white via-white/70 to-transparent sm:hidden"
+            />
           </div>
         </Reveal>
 
