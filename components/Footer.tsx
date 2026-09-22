@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-ink-950">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 sm:flex-row sm:px-8">
         <div>
-          <p className="font-display text-xl font-semibold tracking-tight">
+          <p className="font-display text-xl font-semibold tracking-tight text-cream-50">
             Cohen <span className="font-normal text-cream-50/70">Web Solutions</span>
             <span className="text-gold-400">.</span>
           </p>
