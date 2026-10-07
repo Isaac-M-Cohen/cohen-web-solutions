@@ -6,9 +6,9 @@ import Magnetic from "./Magnetic";
 import RotatingWord from "./RotatingWord";
 import WordStrands from "./WordStrands";
 
-const TRUST_POINTS = ["Based in Miami", "You own everything I build", "Live in weeks, not months"];
+const TRUST_POINTS = ["Based in Miami", "Full-stack: web, mobile & backend", "Shipping production systems"];
 
-const HEADLINE_WORDS = ["Websites", "that", "turn", "visitors", "into"];
+const HEADLINE_WORDS = ["I", "build", "software", "that", "ships", "to", "production."];
 
 function Word({ children, delay }: { children: string; delay: number }) {
   return (
@@ -43,19 +43,13 @@ export default function Hero() {
                   {word}
                 </Word>
               ))}
-              <span
-                className="inline-block animate-rise-in overflow-hidden align-bottom"
-                style={{ animationDelay: "0.6s" }}
-              >
-                <RotatingWord words={["customers.", "calls.", "bookings.", "regulars."]} />
-              </span>
             </h1>
 
             <Reveal delay={200}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-950/65">
-                I design and build fast, modern websites for Miami restaurants, real estate agents, med
-                spas, and local businesses — sites engineered to turn searches into calls, bookings, and
-                sales.
+                I&rsquo;m Isaac Cohen, an 18-year-old full-stack developer in Miami. I&rsquo;ve built a
+                WhatsApp-first marketplace with 21,000 lines of production code, a live algorithmic trading
+                platform serving paying subscribers, and a mobile SAT prep app — all shipped, tested, and running.
               </p>
             </Reveal>
 
@@ -63,18 +57,18 @@ export default function Hero() {
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <Magnetic>
                   <a
-                    href="#contact"
+                    href="#work"
                     className="inline-block rounded-full bg-ink-950 px-8 py-4 text-center text-base font-bold text-cream-50 transition-colors hover:bg-ink-800"
                   >
-                    Get a free site audit
+                    See my projects
                   </a>
                 </Magnetic>
                 <Magnetic>
                   <a
-                    href="#work"
+                    href="#contact"
                     className="inline-block rounded-full border border-ink-950/20 px-8 py-4 text-center text-base font-semibold text-ink-950 transition-colors hover:border-ink-950/60"
                   >
-                    See concept work
+                    Get in touch
                   </a>
                 </Magnetic>
               </div>
@@ -97,21 +91,21 @@ export default function Hero() {
           <Reveal delay={250} className="relative">
             <div className="animate-float">
               <BrowserMock
-                url="yourbusiness.miami"
-                kicker="Miami Beach · Open late"
-                headline="Miami Beach's favorite late-night spot — with a website to match."
-                sub="Real photos, full menu, and order-ahead built for the dinner rush."
-                cta="See the menu"
+                url="isaaccohen.dev"
+                kicker="Miami Beach · Full-stack"
+                headline="Production systems, shipped and running."
+                sub="Marketplaces, trading platforms, and mobile apps — built end to end."
+                cta="See the work"
               />
             </div>
             {/* Floating chips */}
             <div className="animate-float-slow absolute -left-3 top-16 hidden rounded-xl border border-ink-950/10 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:block">
-              <p className="text-[11px] uppercase tracking-wider text-ink-950/50">Load time</p>
-              <p className="font-display text-lg font-semibold text-ink-950">Under 2 seconds</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-950/50">Production code</p>
+              <p className="font-display text-lg font-semibold text-ink-950">21k+ lines shipped</p>
             </div>
             <div className="animate-float-slow absolute -right-3 bottom-16 hidden rounded-xl border border-ink-950/10 bg-white/95 px-4 py-3 shadow-lg backdrop-blur sm:block">
-              <p className="text-[11px] uppercase tracking-wider text-ink-950/50">Built in</p>
-              <p className="font-display text-lg font-semibold text-ink-950">Online ordering</p>
+              <p className="text-[11px] uppercase tracking-wider text-ink-950/50">Tests passing</p>
+              <p className="font-display text-lg font-semibold text-ink-950">210+ and counting</p>
             </div>
           </Reveal>
         </div>

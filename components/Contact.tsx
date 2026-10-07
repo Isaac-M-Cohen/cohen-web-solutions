@@ -7,25 +7,25 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     n: "01",
-    title: "Free audit",
-    text: "A 15-minute call. I walk through your current site and show you exactly what's costing you customers.",
+    title: "Say hello",
+    text: "Send me a message about the role, the team, or what you're building. I read everything personally.",
   },
   {
     n: "02",
-    title: "Fixed-price proposal",
-    text: "You get a clear price and timeline before anything starts. No hourly meters, no surprises.",
+    title: "Talk projects",
+    text: "Happy to walk through any project here in detail — architecture decisions, trade-offs, what I'd do differently.",
   },
   {
     n: "03",
-    title: "Launch in weeks",
-    text: "Design, build, and launch — most projects go live in one to three weeks, then I keep it running.",
+    title: "Meet",
+    text: "I'm in Miami Beach and available for calls, video chats, or in-person meetings around Miami.",
   },
 ];
 
 const AUDIT_POINTS = [
-  "A recorded video teardown of your current site",
-  "Three specific fixes — yours to keep, whether you hire me or not",
-  "Honest, fixed pricing if you want me to do the work",
+  "Full-stack: TypeScript, React, React Native, Python, PostgreSQL",
+  "Production experience: real users, real money, real uptime requirements",
+  "Available immediately for entry-level engineering roles in Miami",
 ];
 
 export default function Contact() {
@@ -38,7 +38,7 @@ export default function Contact() {
     const email = String(data.get("email") ?? "");
     const business = String(data.get("business") ?? "");
     const message = String(data.get("message") ?? "");
-    const subject = `Free site audit request — ${name}${business ? ` (${business})` : ""}`;
+    const subject = `Portfolio inquiry — ${name}${business ? ` (${business})` : ""}`;
     const body = `Name: ${name}\nEmail: ${email}\nBusiness: ${business}\n\n${message}`;
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
@@ -53,11 +53,12 @@ export default function Contact() {
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Contact</p>
           <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-ink-950 sm:text-5xl">
-            Get your free site audit.
+            Let&rsquo;s talk.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-950/65">
-            A 15-minute call where I walk through your current site — or your idea — and show you exactly
-            what&rsquo;s costing you customers and how I&rsquo;d fix it. No pitch, no pressure, no obligation.
+            I&rsquo;m looking for an entry-level software engineering role in Miami — South Beach,
+            Brickell, or mainland. If you&rsquo;re hiring and want someone who ships, I&rsquo;d love
+            to hear from you.
           </p>
         </Reveal>
 
@@ -76,7 +77,7 @@ export default function Contact() {
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-14">
           <Reveal>
             <div className="rounded-2xl border border-gold-600/30 bg-white p-8 shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)]">
-              <h3 className="font-display text-2xl font-semibold text-ink-950">What the audit covers</h3>
+              <h3 className="font-display text-2xl font-semibold text-ink-950">Why me</h3>
               <ul className="mt-5 flex flex-col gap-3.5 text-[15px] leading-relaxed text-ink-950/75">
                 {AUDIT_POINTS.map((point) => (
                   <li key={point} className="flex gap-3">
@@ -96,8 +97,7 @@ export default function Contact() {
                   </a>
                 </p>
                 <p className="mt-3 leading-relaxed">
-                  Serving Miami Beach, Surfside, Bal Harbour, Aventura, Sunny Isles &amp; North Miami
-                  Beach — and remote clients everywhere.
+                  Based in Miami Beach — open to roles across Miami and remote.
                 </p>
               </div>
             </div>
@@ -124,32 +124,32 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
-                    placeholder="david@business.com"
+                    placeholder="you@company.com"
                     className={inputClass}
                   />
                 </div>
               </div>
               <div className="mt-5">
                 <label htmlFor="business" className="mb-2 block text-sm font-medium text-ink-950/70">
-                  Business name <span className="text-ink-950/40">(optional)</span>
+                  Company <span className="text-ink-950/40">(optional)</span>
                 </label>
                 <input
                   id="business"
                   name="business"
-                  placeholder="Cohen's Market"
+                  placeholder="Company Inc."
                   className={inputClass}
                 />
               </div>
               <div className="mt-5">
                 <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink-950/70">
-                  What does your business need?
+                  Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={5}
-                  placeholder="Tell me about your current site — or the one you wish you had."
+                  placeholder="Tell me about the role or what you'd like to discuss."
                   className={`${inputClass} resize-none`}
                 />
               </div>
@@ -157,7 +157,7 @@ export default function Contact() {
                 type="submit"
                 className="mt-7 w-full rounded-full bg-ink-950 px-8 py-4 text-base font-bold text-cream-50 transition-all hover:-translate-y-0.5 hover:bg-ink-800"
               >
-                Request my free audit
+                Send message
               </button>
               {sent && (
                 <p className="mt-4 text-center text-sm text-gold-600">

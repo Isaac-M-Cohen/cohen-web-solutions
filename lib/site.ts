@@ -2,8 +2,8 @@
 export const CONTACT_EMAIL = "isaac@cohenwebsolutions.com";
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
+  { label: "Projects", href: "#work" },
+  { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ] as const;

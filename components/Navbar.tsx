@@ -10,7 +10,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-950/10 bg-cream-50/85 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="font-display text-xl font-semibold tracking-tight text-ink-950">
-          Cohen <span className="font-normal text-ink-950/60">Web Solutions</span>
+          Isaac <span className="font-normal text-ink-950/60">Cohen</span>
           <span className="text-gold-500">.</span>
         </a>
 
@@ -28,7 +28,7 @@ export default function Navbar() {
             href="#contact"
             className="rounded-full bg-ink-950 px-5 py-2.5 text-sm font-semibold text-cream-50 transition-colors hover:bg-ink-800"
           >
-            Free site audit
+            Get in touch
           </a>
         </div>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-ink-950 px-5 py-3 text-center text-sm font-semibold text-cream-50"
             >
-              Free site audit
+              Get in touch
             </a>
           </div>
         </div>

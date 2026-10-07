@@ -2,20 +2,20 @@ import Reveal from "./Reveal";
 
 const PRINCIPLES = [
   {
-    title: "Direct",
-    text: "You always talk to me — no account managers, no telephone game. Your feedback goes straight into the build.",
+    title: "Production-minded",
+    text: "I build systems that run in production — with tests, monitoring, error handling, and the operational discipline real users depend on.",
   },
   {
-    title: "Fast",
-    text: "Most sites go live in one to three weeks. I use modern tooling and AI-assisted workflows to ship at a pace agencies can't match.",
+    title: "Full-stack",
+    text: "Database to deploy. I design schemas, write APIs, build interfaces, and ship the infrastructure that holds it together.",
   },
   {
-    title: "Yours",
-    text: "You own the domain, the code, and every asset. No lock-in, no ransom notes if we ever part ways.",
+    title: "Fast learner",
+    text: "I pick up new stacks quickly and go deep fast — from WhatsApp's Business API to Kalshi's trading API to React Native.",
   },
   {
-    title: "Local",
-    text: "I'm in Miami, building for Miami. I know why the Friday dinner rush matters and why your site has to be perfect on a phone.",
+    title: "Owner's mindset",
+    text: "I've founded and run a real product with paying subscribers. I think about the business, not just the code.",
   },
 ];
 
@@ -55,14 +55,14 @@ export default function About() {
           </Reveal>
           <Reveal delay={100}>
             <p className="mt-6 text-lg leading-relaxed text-ink-950/70">
-              I&rsquo;m Isaac, an 18-year-old full-stack developer based in Miami. I build websites and
-              backend systems for real clients — and I do it fast. No agency overhead, no six-week
-              timelines, no junior-varsity output.
+              I&rsquo;m Isaac, an 18-year-old full-stack developer based in Miami Beach. I&rsquo;ve been
+              building real software since I was 14 — from a WhatsApp-first marketplace with 21,000 lines
+              of production code to a live algorithmic trading platform serving paying subscribers.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink-950/70">
-              I grew up in Miami, so I don&rsquo;t just build for your customers —
-              I understand them. I know why the phone has to ring, why everything has to work perfectly on
-              mobile, and why trust is everything.
+              I&rsquo;m looking for an entry-level engineering role where I can learn from strong
+              professionals and contribute from day one. I ship fast, test my work, and take ownership
+              of what I build.
             </p>
           </Reveal>
 

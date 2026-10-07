@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 sm:flex-row sm:px-8">
         <div>
           <p className="font-display text-xl font-semibold tracking-tight text-cream-50">
-            Cohen <span className="font-normal text-cream-50/70">Web Solutions</span>
+            Isaac <span className="font-normal text-cream-50/70">Cohen</span>
             <span className="text-gold-400">.</span>
           </p>
-          <p className="mt-1 text-sm text-cream-50/45">Websites for Miami businesses.</p>
+          <p className="mt-1 text-sm text-cream-50/45">Full-stack developer · Miami, FL</p>
         </div>
         <div className="flex items-center gap-6">
           {NAV_LINKS.map((link) => (
@@ -22,7 +22,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-xs text-cream-50/35">© 2026 Cohen Web Solutions · Built with Next.js</p>
+        <p className="text-xs text-cream-50/35">© 2026 Isaac Cohen · Built with Next.js</p>
       </div>
     </footer>
   );

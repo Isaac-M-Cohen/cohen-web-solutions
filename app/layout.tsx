@@ -15,9 +15,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Cohen Web Solutions — Websites that turn visitors into customers",
+  title: "Isaac Cohen — Full-stack developer",
   description:
-    "Miami-based developer building fast, modern websites for restaurants, real estate agents, med spas, and local businesses. Get a free site audit.",
+    "Isaac Cohen is an 18-year-old full-stack developer in Miami. Portfolio: a WhatsApp-first marketplace, a live algorithmic trading platform, and a mobile SAT prep app.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

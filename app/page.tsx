@@ -17,10 +17,11 @@ export default function Home() {
         <Hero />
         <Marquee
           items={[
-            "Free 15-minute site audit",
-            "Fixed pricing, no surprises",
-            "Live in weeks, not months",
-            "You own everything",
+            "TypeScript",
+            "React & React Native",
+            "Python",
+            "Next.js",
+            "PostgreSQL",
             "Built in Miami",
           ]}
         />
