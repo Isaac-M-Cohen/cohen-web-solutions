@@ -5,12 +5,19 @@ type Project = {
   id: string;
   number: string;
   name: string;
+  url?: string;
   tagline: string;
   role: string;
   stack: string[];
   description: string;
+  builtOut?: string[];
   highlights: string[];
   stats: { label: string; value: string }[];
+  sitePreview?: {
+    url: string;
+    headline: string;
+    sub: string;
+  };
 };
 
 const PROJECTS: Project[] = [
@@ -18,17 +25,29 @@ const PROJECTS: Project[] = [
     id: "work-sitters",
     number: "01",
     name: "Sitters Over FL",
+    url: "https://sittersoverfl.com",
     tagline: "A WhatsApp-first babysitter marketplace and operations platform for South Florida.",
     role: "Sole developer — design, backend, frontend, database, integrations",
     stack: ["Next.js 16", "React 19", "TypeScript", "Supabase", "PostgreSQL", "WhatsApp Business API", "OpenAI", "Stripe"],
     description:
-      "Not a marketing site — a complete operations platform. Parents start on WhatsApp, describe their booking conversationally (in English, French, or Spanish), and get deterministically matched with sitters by availability, service area, language, driving ability, and rate. The system sends private job offers, collects up to three interested sitters, presents an immutable parent shortlist, and confirms the booking with fee-link delivery. A protected owner dashboard handles bookings, sitters, escalations, conversations, and dispatch — effectively a lightweight CRM.",
+      "I built the entire platform end to end. The public website — designed and built by me — explains the service, the founder's story, pricing, FAQs, and sitter opportunities. Behind it sits a full operations system: parents start on WhatsApp and either chat conversationally or open a private, expiring booking form; the backend collects children, location, schedule, rate, and care needs, then deterministically matches sitters by availability, service area, language, and driving ability. The WhatsApp bot sends private job offers, builds an immutable parent shortlist with sitter photos, and confirms bookings with fee-link delivery. A protected owner dashboard — effectively a lightweight CRM — handles bookings, sitters, escalations, conversations, and dispatch.",
+    builtOut: [
+      "Database — PostgreSQL via Supabase: booking state machine enforced in both TypeScript and SQL, RPCs with expected-state checks and row locks against concurrent updates, 18 migrations",
+      "Website — custom responsive design in CSS Modules (no UI framework), public pages plus protected owner dashboard",
+      "Backend — idempotent, resumable webhook processing; encrypted expiring booking links; signed HttpOnly admin sessions",
+      "WhatsApp bot — Meta Business Cloud API; AI extracts booking details from natural language (EN/FR/ES) with schema-validated outputs barred from authoritative decisions",
+    ],
     highlights: [
       "Formal booking state machine enforced in TypeScript and PostgreSQL",
       "Idempotent, resumable webhook processing — duplicate WhatsApp/Stripe events never repeat side effects",
       "AI extracts booking details from natural language but is schema-validated and barred from authoritative decisions",
       "Encrypted, expiring booking links; signed HttpOnly admin sessions; RLS with no browser-facing policies",
     ],
+    sitePreview: {
+      url: "sittersoverfl.com",
+      headline: "Find the perfect babysitter in minutes.",
+      sub: "Sitters Over FL connects families with dependable local babysitters through one simple WhatsApp conversation.",
+    },
     stats: [
       { label: "Lines of code", value: "~21k" },
       { label: "Source files", value: "140" },
@@ -40,11 +59,17 @@ const PROJECTS: Project[] = [
     id: "work-automatrade",
     number: "02",
     name: "Automatrade",
+    url: "https://automatrade.app",
     tagline: "Automated copy-trading platform for sports prediction markets.",
     role: "Founder & sole engineer — architecture, backend, bots, billing, DevOps",
     stack: ["Python", "Kalshi API", "Docker", "SQLite", "Stripe", "Discord.py", "GitHub Actions"],
     description:
-      "A production trading platform that auto-copies algorithmic bot trades onto subscribers' brokerage accounts. Eleven live trading bots stream signals with single-digit-second signal-to-order latency. The system includes a Discord bot with 30+ slash commands for onboarding, portfolio management, and real-time trade delivery; Stripe subscription billing with weekly statements; health monitoring, circuit breakers, and failure-alert watchdogs. Serving paying subscribers on DigitalOcean with an automated CI/CD release pipeline.",
+      "I founded and built Automatrade from scratch. It's a copy-trading platform: algorithmic trading bots publish their picks, and subscribers' accounts automatically mirror those trades on Kalshi, a regulated prediction-market exchange. Everything runs through Discord — subscribers join the server, pick their bots with slash commands, connect their Kalshi API keys, set risk limits (unit sizes, stop losses, max orders), and receive every trade as a real-time Discord message with a one-click link to the market. A web dashboard at automatrade.app shows live P&L, bot lineups, and account controls. Billing runs on Stripe subscriptions with weekly itemized statements. The whole system — signal ingestion, order placement, Discord delivery, billing, health monitoring — runs on a DigitalOcean server I manage, deployed through an automated CI/CD pipeline.",
+    sitePreview: {
+      url: "automatrade.app",
+      headline: "Your bots. Your limits. One clear dashboard.",
+      sub: "Manage your trading bot lineup, unit sizes, stop losses, and profit — without returning to Discord.",
+    },
     highlights: [
       "11 live bots, single-digit-second signal-to-order latency",
       "Stream-only signal ingestion with automatic polling fallback",
@@ -116,7 +141,19 @@ export default function Work() {
                       <span className="h-px w-10 bg-gold-500/60" />
                     </div>
                     <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink-950 sm:text-4xl">
-                      {project.name}
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-gold-600"
+                        >
+                          {project.name}
+                          <span className="ml-2 inline-block align-middle text-xl">↗</span>
+                        </a>
+                      ) : (
+                        project.name
+                      )}
                     </h3>
                     <p className="mt-3 text-base font-medium text-ink-950/70">{project.tagline}</p>
                     <p className="mt-2 text-sm italic text-ink-950/50">{project.role}</p>
@@ -148,6 +185,54 @@ export default function Work() {
 
               <Reveal delay={150} className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <p className="leading-relaxed text-ink-950/70">{project.description}</p>
+
+                {project.builtOut && (
+                  <div className="mt-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">
+                      What I built
+                    </p>
+                    <ul className="mt-4 flex flex-col gap-3 text-[15px] leading-relaxed text-ink-950/75">
+                      {project.builtOut.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-0.5 font-bold text-gold-600">→</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {project.sitePreview && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 block overflow-hidden rounded-2xl border border-ink-950/10 bg-white shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)] transition-transform hover:-translate-y-1"
+                  >
+                    <div className="flex items-center gap-2 border-b border-ink-950/10 bg-cream-50 px-4 py-2.5">
+                      <span className="flex gap-1.5">
+                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
+                      </span>
+                      <span className="ml-2 truncate text-xs font-medium text-ink-950/50">
+                        {project.sitePreview.url}
+                      </span>
+                    </div>
+                    <div className="p-6">
+                      <p className="font-display text-xl font-semibold leading-snug text-ink-950">
+                        {project.sitePreview.headline}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-950/60">
+                        {project.sitePreview.sub}
+                      </p>
+                      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-gold-600">
+                        Visit live site ↗
+                      </p>
+                    </div>
+                  </a>
+                )}
+
                 <div className="mt-6">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">
                     Engineering highlights
