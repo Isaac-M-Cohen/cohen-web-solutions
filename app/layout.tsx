@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Manrope, Nunito_Sans, Corben } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,6 +14,25 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const corben = Corben({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-corben",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Isaac Cohen — Full-stack developer",
   description:
@@ -22,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${nunitoSans.variable} ${manrope.variable} ${corben.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

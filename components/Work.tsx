@@ -1,5 +1,7 @@
 import Reveal from "./Reveal";
 import Parallax from "./Parallax";
+import SittersPreview from "./SittersPreview";
+import AutomatradePreview from "./AutomatradePreview";
 
 type Project = {
   id: string;
@@ -13,11 +15,7 @@ type Project = {
   builtOut?: string[];
   highlights: string[];
   stats: { label: string; value: string }[];
-  sitePreview?: {
-    url: string;
-    headline: string;
-    sub: string;
-  };
+  preview?: "sitters" | "automatrade";
 };
 
 const PROJECTS: Project[] = [
@@ -43,11 +41,7 @@ const PROJECTS: Project[] = [
       "AI extracts booking details from natural language but is schema-validated and barred from authoritative decisions",
       "Encrypted, expiring booking links; signed HttpOnly admin sessions; RLS with no browser-facing policies",
     ],
-    sitePreview: {
-      url: "sittersoverfl.com",
-      headline: "Find the perfect babysitter in minutes.",
-      sub: "Sitters Over FL connects families with dependable local babysitters through one simple WhatsApp conversation.",
-    },
+    preview: "sitters",
     stats: [
       { label: "Lines of code", value: "~21k" },
       { label: "Source files", value: "140" },
@@ -65,11 +59,7 @@ const PROJECTS: Project[] = [
     stack: ["Python", "Kalshi API", "Docker", "SQLite", "Stripe", "Discord.py", "GitHub Actions"],
     description:
       "I founded and built Automatrade from scratch. It's a copy-trading platform: algorithmic trading bots publish their picks, and subscribers' accounts automatically mirror those trades on Kalshi, a regulated prediction-market exchange. Everything runs through Discord — subscribers join the server, pick their bots with slash commands, connect their Kalshi API keys, set risk limits (unit sizes, stop losses, max orders), and receive every trade as a real-time Discord message with a one-click link to the market. A web dashboard at automatrade.app shows live P&L, bot lineups, and account controls. Billing runs on Stripe subscriptions with weekly itemized statements. The whole system — signal ingestion, order placement, Discord delivery, billing, health monitoring — runs on a DigitalOcean server I manage, deployed through an automated CI/CD pipeline.",
-    sitePreview: {
-      url: "automatrade.app",
-      headline: "Your bots. Your limits. One clear dashboard.",
-      sub: "Manage your trading bot lineup, unit sizes, stop losses, and profit — without returning to Discord.",
-    },
+    preview: "automatrade",
     highlights: [
       "11 live bots, single-digit-second signal-to-order latency",
       "Stream-only signal ingestion with automatic polling fallback",
@@ -202,35 +192,16 @@ export default function Work() {
                   </div>
                 )}
 
-                {project.sitePreview && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-8 block overflow-hidden rounded-2xl border border-ink-950/10 bg-white shadow-[0_10px_30px_-18px_rgba(5,12,24,0.25)] transition-transform hover:-translate-y-1"
-                  >
-                    <div className="flex items-center gap-2 border-b border-ink-950/10 bg-cream-50 px-4 py-2.5">
-                      <span className="flex gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-ink-950/15" />
-                      </span>
-                      <span className="ml-2 truncate text-xs font-medium text-ink-950/50">
-                        {project.sitePreview.url}
-                      </span>
-                    </div>
-                    <div className="p-6">
-                      <p className="font-display text-xl font-semibold leading-snug text-ink-950">
-                        {project.sitePreview.headline}
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-950/60">
-                        {project.sitePreview.sub}
-                      </p>
-                      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-gold-600">
-                        Visit live site ↗
-                      </p>
-                    </div>
-                  </a>
+                {project.preview === "sitters" && (
+                  <div className="mt-8">
+                    <SittersPreview />
+                  </div>
+                )}
+
+                {project.preview === "automatrade" && (
+                  <div className="mt-8">
+                    <AutomatradePreview />
+                  </div>
                 )}
 
                 <div className="mt-6">
